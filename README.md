@@ -9,7 +9,7 @@ Add this gem to your gem's Gemfile:
 gem 's3_gem_host'
 ```
 
-Require this bundler/gem_tasks (recommended) and this gem in your Rakefile
+Require bundler/gem_tasks (recommended) and this gem in your Rakefile
 ```ruby
 # Rakefile
 
