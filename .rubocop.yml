@@ -1,0 +1,235 @@
+# Run rubocop --auto-gen-config to generate .rubocop_todo.yml
+# Run rubocop --auto-correct to have rubocop auto fix all offenses (Use this feature carefully!)
+# Enable rubocop todos to go through them one by one
+# For how to get started with rubocop, see: https://buildtoship.com/integrate-rubocop-in-your-workflow/
+
+require:
+  - rubocop-rspec
+
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.6
+  # Cop names are not displayed in offense messages by default. Change behavior
+  # by overriding DisplayCopNames, or by giving the -D/--display-cop-names
+  # option.
+  DisplayCopNames: true
+  # Style guide URLs are not displayed in offense messages by default. Change
+  # behavior by overriding DisplayStyleGuide, or by giving the
+  # -S/--display-style-guide option.
+  DisplayStyleGuide: true
+  # Exclude certain files
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'client/**/*'
+    - 'node_modules/**/*'
+
+################################## Style ##################################
+
+# Enable, Disable, and Edit styles below
+# Default rubocop styles can be found at https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+# Copy styles from above url or .rubocop_todo.yml and only change specific rules (suggest using comments from both)
+
+Style/AccessModifierDeclarations:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - '**/*.rb'
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: nested, compact
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Document classes and non-namespace modules.
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/*'
+    - 'config/locales/*'
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'app/views/*'
+
+Style/GuardClause:
+  Exclude:
+    - '**/*.rb'
+
+Style/NumericPredicate:
+  Exclude:
+    - '**/*.rb'
+
+# Cop supports --auto-correct.
+Style/RedundantSelf:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowIfMethodIsEmpty.
+Style/SingleLineMethods:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  Exclude:
+    - 'spec/**/*'
+    - 'app/**/*'
+
+Style/TrailingCommaInArrayLiteral:
+  Exclude:
+    - 'spec/**/*'
+    - 'app/**/*'
+
+Style/TrailingCommaInHashLiteral:
+  Exclude:
+    - 'spec/**/*'
+    - 'app/**/*'
+
+################################## Layout #################################
+
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+# Checks the indentation of the first element in an array literal.
+Layout/FirstArrayElementIndentation:
+  Enabled: false
+
+Layout/FirstHashElementIndentation:
+  Exclude:
+    - '**/*.rb'
+
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+    - 'spec/**/*'
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
+# SupportedStyles: aligned, indented
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+################################## Lint ###################################
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowUnusedKeywordArguments, IgnoreEmptyMethods.
+Lint/UnusedMethodArgument:
+  Exclude:
+    - 'config/initializers/sidekiq.rb'
+    - 'app/controllers/application_controller.rb'
+
+################################## Metrics ################################
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'config/**/*.rb'
+    - 'app/controllers/api/**/*'
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 9
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'Gemfile'
+
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 50
+
+Metrics/ModuleLength:
+  Max: 250
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+################################## Naming #################################
+
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+################################## RSpec ##################################
+
+# Check that instances are not being stubbed globally
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/lib/tasks/**/*'
+    - 'spec/integration/*.rb'
+
+# Configuration parameters: Max.
+RSpec/ExampleLength:
+  Max: 25
+
+RSpec/ExpectActual:
+  Exclude:
+    - 'spec/**/*.rb'
+
+RSpec/FilePath:
+  Exclude:
+    - 'spec/karafka/**/*'
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - '**/*.rb'
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+RSpec/NestedGroups:
+  Max: 7
+
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+
+RSpec/RepeatedExampleGroupBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
