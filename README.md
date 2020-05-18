@@ -25,7 +25,7 @@ rake clean                      # Remove any temporary products
 rake clobber                    # Remove any generated files
 rake install                    # Build and install your-gem-x.x.x.gem into system gems
 rake install:local              # Build and install your-gem-x.x.x.gem into system gems without network access
-rake release[remote]            # Create tag vx.x.x and build and push s3_gem_host-1.0.0.gem to rubygems.org
+rake release[remote]            # Create tag vx.x.x and build and push your-gem-x.x.x.gem to rubygems.org
 rake s3_gem_host:push           # Publish a newly built gem version to S3
 rake s3_gem_host:yank[version]  # Remove a previously published gem version from S3
 rake spec                       # Run RSpec code examples
