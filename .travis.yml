@@ -2,6 +2,6 @@ language: ruby
 rvm:
   - 2.6
 script:
-  — bundle install
-  — bundle exec rake spec
-  — rubocop
+  - bundle install
+  - bundle exec rake spec
+  - rubocop

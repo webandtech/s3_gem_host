@@ -1,4 +1,4 @@
-# S3 Gem Host
+# S3 Gem Host [![Build Status](https://travis-ci.org/webandtech/s3_gem_host.svg?branch=master)](https://travis-ci.org/webandtech/s3_gem_host)
 This gem provides rake tasks for publishing and managing Ruby gems hosted on Amazon S3.
 
 ## Installation
